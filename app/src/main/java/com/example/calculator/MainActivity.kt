@@ -129,30 +129,22 @@ fun Calculator(){
             }
             Button(
                 onClick={
-                    if (text == "") {
-                        operation = "+"
-                    }
-                    else{
+
                     num_one = text.toInt()
                     num_two = Check(num_two, num_one, operation)
                     operation ="+"
                     text=""
-                }}
+                }
             ){
                 Text("+")
             }
             Button(
                 onClick={
-                    if (text == "") {
-                        operation = "*"
-                    }
-                    else{
                     num_one = text.toInt()
                     num_two = Check(num_two, num_one, operation)
                     operation ="*"
                     text=""
-
-                }}
+                }
             ){
                 Text("*")
             }
@@ -187,34 +179,21 @@ fun Calculator(){
             }
             Button(
                 onClick={
-                    if (text == "") {
-                        num_one = 0
-                        operation = "-"
-                    }
-                    else{
                     num_one = text.toInt()
                     num_two = Check(num_two, num_one, operation)
                     operation ="-"
                     text=""
-                }}
+                }
             ){
                 Text("-")
             }
             Button(
                 onClick={
-                    if (text == "") {
-                        operation = "\\"
-                    }
-                    else if (num_one==0){
-                        num_one=1
-                        text = ""
-                    }
-                    else{
                     num_one = text.toInt()
                     num_two = Check(num_two, num_one, operation)
                     operation ="\\"
                     text=""
-                }}
+                }
             ){
                 Text("\\")
 
@@ -249,18 +228,13 @@ fun Calculator(){
             }
             Button(
                 onClick={
-                    if (text == "") {
-                        num_one = 0
-                        num_two = 0
-                        operation = "+"
-                    }
-                    else{
+
                     operation = ""
                     num_two = sqrt(text.toDouble()).toInt()
                     num_one = 0
                     display_text = num_two.toString()
                     text = num_two.toString()
-                }}
+                }
             ){
                 Text("      sqrt      ")
             }
@@ -271,27 +245,20 @@ fun Calculator(){
 
             Button(
                 onClick={
+                    if(operation == "\\"){
+                    }
+                    else {
+                    text = text+"0"
 
-                    if (text.length == 0){
-                        text = ""
-                    }
-                    else{
-                        text = text+"0"
-                    }
                     display_text= text
-                }
+                }}
             ){
                 Text("             0             ")
             }
 
             Button(
                 onClick = {
-                    if (text == "") {
-                        num_one = 0
-                        num_two = 0
-                        operation = "+"
-                    }
-                    else {
+
                         num_one = text.toInt()
                         num_two = Check(num_two, num_one, operation)
                         text = num_two.toString()
@@ -299,8 +266,7 @@ fun Calculator(){
                         num_two = 0
                         operation = "+"
                         display_text = text
-                        text=""
-                    }
+
                 },
 
                 ){
